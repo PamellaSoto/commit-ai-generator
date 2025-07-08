@@ -1,14 +1,9 @@
 ![Project cover photo]()
 
 ## 🤖 Commit AI Generator
-_(ENG)_ Is an intelligent commit message generator powered by Gemini AI, designed to help developers write clear, standardized messages effortlessly.
+Is an intelligent commit message generator powered by Gemini AI, designed to help developers write clear, standardized messages effortlessly.
 YouChoose the type of change you made, and type a short description of your code changes, and it instantly suggests a commit message.
 A simple, smart tool to improve your workflow and save time.
-
-## 🤖 Gerador de Commits
-_(PTBR)_ É um gerador inteligente de mensagens de commit, utilizando a **IA do Gemini**, pensado para ajudar desenvolvedores a escrever mensagens claras e padronizadas com facilidade.  
-Você seleciona o tipo de ação que realizou, escreve uma breve descrição das alterações no código e recebe uma sugestão de commit.  
-Uma ferramenta simples e inteligente para melhorar seu fluxo de trabalho e ganhar tempo.
 
 ---
 
@@ -20,6 +15,4 @@ Uma ferramenta simples e inteligente para melhorar seu fluxo de trabalho e ganha
 
 ---
 
-_(ENG) Commit AI Gen is a project developed during the 20th edition of NLW (Next Level Week), a programming event organized by RocketSeat, aiming to give developers the opportunity to code, learn, and build real projects._
-
-_(PTBR) Gerador de commits é um projeto desenvolvido durante o **NLW (Next Level Week)**, um evento de programação promovido pela **RocketSeat**._
+_Commit AI Gen is a project developed during the 20th edition of NLW (Next Level Week), a programming event organized by RocketSeat, aiming to give developers the opportunity to code, learn, and build real projects._

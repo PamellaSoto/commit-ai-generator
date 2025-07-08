@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <script src="https://unpkg.com/thpace"></script>
+    <title>Commit AI Generator</title>
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <img src="./src/images/logo.png" alt="Logo ">
+        </header>
+            <main>
+            <section>
+                <h1>Commit AI Generator</h1>
+                <p>Optimize your workflow with well-structured commits.</p>
+                <form id="commit-form">
+                    <div>
+                        <label for="api-key" aria-hidden="true" hidden>Enter your Gemini API Key:</label>
+                        <input id="api-key" type="password" placeholder="Enter your Gemini API Key">
+                        <label for="input-type" aria-hidden="true" hidden>Select the type of commit</label>
+                        <select id="input-type">
+                            <option disabled selected>Select the type of commit</option>
+                            <option value="feature">Feature</option>
+                            <option value="fix">Fix</option>
+                            <option value="docs">Docs</option>
+                            <option value="style">Style</option>
+                            <option value="refactor">Refactor</option>
+                            <option value="update">Update</option>
+                            <option value="test">Test</option>
+                            <option value="build">Build</option>
+                        </select>
+                    </div>
+                    <label for="input-prompt" aria-hidden="true" hidden>Type down your commit prompt</label>
+                    <textarea id="input-prompt"></textarea>
+                    <button id="generate-button" type="submit">GENERATE NEW COMMIT</button>
+                </form>
+                <div id="ai-response">
+                    <button id="copy-button">
+                        Copy text
+                        <img src="./src/images/icon-copy.png" alt="Copy text action icon">    
+                    </button>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis laudantium id error neque corrupti vitae, ad repellendus a vero illo aliquam quo dolore tempora soluta illum, hic est nihil tempore?
+                    Perspiciatis officia earum voluptatem error corrupti molestias reprehenderit quaerat mollitia commodi similique repellendus, reiciendis ratione molestiae. Nemo eligendi, pariatur adipisci odit esse impedit eius debitis sapiente, quibusdam fugit, saepe officiis.
+                    Non consequatur minima eligendi sapiente porro, impedit dolorem qui culpa et at, natus illo, similique iusto vitae consectetur reprehenderit laborum mollitia. Consequatur officiis nisi deleniti corrupti exercitationem odio ex obcaecati.
+                    Consequuntur excepturi corporis architecto unde et consectetur quasi vitae, id vero aperiam. Dignissimos eveniet dicta pariatur maiores modi, molestias quae, consequatur aliquam temporibus delectus ad laudantium natus praesentium, adipisci quaerat?
+                    Porro doloremque ullam repudiandae vero consectetur aut sint sit? Doloribus beatae, cum, commodi suscipit et eum odit ipsum, veritatis est minus blanditiis omnis porro expedita at? Aliquam pariatur eligendi ullam.
+                    Temporibus explicabo dicta inventore optio vel perferendis beatae, illo iure voluptatibus maxime nam possimus non officia animi harum aut, repellat quos accusantium delectus magni neque. Architecto, sint libero. Impedit, sint.
+                    Fugiat, eveniet. Tempora accusamus fuga possimus illo commodi assumenda quod, soluta mollitia doloremque nostrum maxime sunt quaerat at consectetur. Sit quibusdam similique tenetur explicabo sequi dolores perferendis ad quod alias!
+                    Assumenda impedit maxime suscipit aspernatur illum recusandae consectetur, pariatur neque necessitatibus quasi culpa excepturi nihil repudiandae facilis fugiat ratione aliquam temporibus iste? Repudiandae incidunt beatae aperiam minima dolorum, dicta odit.
+                    Doloremque dolorem minima itaque reprehenderit molestias! Eveniet totam ratione repellat, similique nam quo sed voluptatum necessitatibus id incidunt assumenda, ullam, blanditiis consequuntur eos culpa ipsa quam consequatur sapiente perferendis veniam.
+                    Sit optio recusandae repudiandae illum assumenda repellat aliquid, maxime unde non sequi quisquam accusantium harum vel, blanditiis cumque dolor excepturi minus fugiat iure? Quis, nesciunt! Tempore, enim! Minus, deleniti qui.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <canvas id="background" width="1920" height="919"></canvas>
+    <script type="module" src="./src/scripts/thpace.js"></script>
+    <script src="./src/scripts/app.js"></script>
+</body>
+</html>

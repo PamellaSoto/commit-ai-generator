@@ -1,0 +1,152 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    font-family: "DM Sans", sans-serif;
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#layout {
+    z-index: 1;
+    position: relative;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15vh;
+    padding: 2rem;
+    color: #fff;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header img {
+    max-width: 70%;
+}
+
+section {
+    max-width: 600px;
+    padding: 2rem 1.5rem;
+    background: #120e1aa8;
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+section > p {
+    color: rgb(179, 179, 179);
+    line-height: 1.5;
+}
+
+#commit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 24px;
+}
+#commit-form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#input-type {
+    border: none;
+}
+#api-key, #input-type, #input-prompt {
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: #0f0e17;
+    color: #fff;
+    border: 0;
+    outline:#6300DB99 1px solid;
+}
+#api-key::placeholder, 
+#input-prompt::placeholder {
+    color: #A6A6A6;
+}
+
+#api-key:focus, #input-type:focus, #input-prompt:focus {
+    outline:#fa8f38 1px solid;
+    box-shadow: 0px 0px 10px 0px #fa8f38;
+}
+#commit-form button {
+    cursor: pointer;
+    background: linear-gradient(90deg, #6300DB 30%, #F05033 100%);
+    background-size: 300% auto;
+    background-position: left center;
+    padding: 14px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 0.15rem;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+}
+
+#commit-form button:hover {
+    transition: all 0.5s ease-in-out;
+    background-position: center center;
+}
+#commit-form button:active {
+    background-position: right center;
+}
+#ai-response {
+    position: relative;
+    padding: 18px 14px;
+    margin-top: 24px;
+    background: #0f0e17;
+    border-radius: 4px;
+    border-left:#6300DB99 3px solid;
+}
+#ai-response > p {
+    color: #fff;
+    line-height: 1.5;
+}
+#copy-button {
+    position: absolute;
+    top: 10px; right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 5px 3px;
+    background: #6300DB;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.7rem;
+}
+#copy-button img {
+    width: 20px;
+    aspect-ratio: 1/1;
+}
+
+@media (min-width: 600px) {
+    header img {
+        max-width: 35%;
+    }
+    section {
+        min-width: 600px;
+    }
+    #commit-form > div {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+    #api-key {
+        flex-grow: 1;
+    }
+}
