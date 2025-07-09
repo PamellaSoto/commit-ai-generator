@@ -7,17 +7,7 @@ A simple, smart tool to improve your workflow and save time.
 
 ---
 
-## 🧪 Technologies  
-- HTML  
-- CSS  
-- JavaScript  
-- [Thpace Canvas](https://github.com/ImBaedin/Thpace)
-- [Showdown](https://github.com/showdownjs/showdown)
-- Google Gemini API  
-
----
-
-##🛠️ Getting Your Gemini API Key
+## 🛠️ Getting Your Gemini API Key
 To use the Commit AI Generator, you’ll need a Gemini API key. Follow the steps below:
 
 1. Google "Gemini docs" and open the Overview page.
@@ -28,6 +18,16 @@ To use the Commit AI Generator, you’ll need a Gemini API key. Follow the steps
 6. When prompted, choose to create a new project.
 7. Your API key will be generated.
 8. Copy and paste the key into the Commit AI Generator when prompted — and you're all set!
+
+---
+
+## 🧪 Technologies  
+- HTML  
+- CSS  
+- JavaScript  
+- [Thpace Canvas](https://github.com/ImBaedin/Thpace)
+- [Showdown](https://github.com/showdownjs/showdown)
+- Google Gemini API  
 
 ---
 
