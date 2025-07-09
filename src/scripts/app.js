@@ -5,7 +5,7 @@ const inputType = document.querySelector('#input-type');
 const inputPrompt = document.querySelector('#input-prompt');
 const generateButton = document.querySelector('#generate-button');
 const aiResponse = document.querySelector('#ai-response');
-
+const copyButton = document.querySelector('#copy-button');
 const inputPlaceholders = [
     'Briefly describe what was done...',
     'Write your commit message here...',
@@ -22,5 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 commitForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    
+
+})
+
+copyButton.addEventListener('click', () => {
+    const textToCopy = aiResponse.querySelector('p').textContent;
+    navigator.clipboard.writeText(textToCopy);
+    textToCopy.select();
+    textToCopy.setSelectionRange(0, 99999);
+
 })
