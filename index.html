@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/main.css">
-    <script src="https://unpkg.com/thpace"></script>
+    <link rel="shortcut icon" href="./src/images/favicon.png" type="image/x-icon">
     <title>Commit AI Generator</title>
 </head>
 <body>
@@ -13,16 +13,16 @@
             <img src="./src/images/logo.png" alt="Logo ">
         </header>
             <main>
-            <section>
+            <section class="slide-in">
                 <h1>Commit AI Generator</h1>
                 <p>Optimize your workflow with well-structured commits.</p>
                 <form id="commit-form">
                     <div>
                         <label for="api-key" aria-hidden="true" hidden>Enter your Gemini API Key:</label>
-                        <input id="api-key" type="password" placeholder="Enter your Gemini API Key">
+                        <input id="api-key" type="password" placeholder="Enter your Gemini API Key" required>
                         <label for="input-type" aria-hidden="true" hidden>Select the type of commit</label>
                         <select id="input-type">
-                            <option disabled selected>Select the type of commit</option>
+                            <option value="" disabled selected>Select the type of commit</option>
                             <option value="feature">Feature</option>
                             <option value="fix">Fix</option>
                             <option value="docs">Docs</option>
@@ -34,22 +34,21 @@
                         </select>
                     </div>
                     <label for="input-prompt" aria-hidden="true" hidden>Type down your commit prompt</label>
-                    <textarea id="input-prompt"></textarea>
-                    <button id="generate-button" type="submit">GENERATE NEW COMMIT</button>
+                    <textarea id="input-prompt" required></textarea>
+                    <button id="generate-button" type="submit">Generate new Commit</button>
                 </form>
-                <div id="ai-response" class="hidden">
-                    <button id="copy-button">
-                        Copy text
-                        <img src="./src/images/icon-copy.png" alt="Copy text action icon">    
-                    </button>
-                    <p></p>
-                </div>
+                <div id="ai-response" class="hidden"></div>
+                <button id="copy-button" class="hidden">Copy text</button>
+                
             </section>
+            <p class="credits slide-in">Made by <a href="https://github.com/PamellaSoto" target="_blank">Pamella Soto</a> during the #NLW20 by <a href="https://www.rocketseat.com.br" target="_blank">RocketSeat</a></p>
         </main>
     </div>
     
     <canvas id="background" width="1920" height="919"></canvas>
-    <script type="module" src="./src/scripts/thpace.js"></script>
     <script src="./src/scripts/app.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script src="https://unpkg.com/thpace"></script>
+    <script type="module" src="./src/scripts/thpace.js"></script>
 </body>
 </html>

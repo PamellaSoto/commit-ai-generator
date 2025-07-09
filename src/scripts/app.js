@@ -1,6 +1,6 @@
 const commitForm = document.querySelector('#commit-form');
 const apiKey = document.querySelector('#api-key');
-// apiKey.value
+// 
 const inputType = document.querySelector('#input-type');
 const inputPrompt = document.querySelector('#input-prompt');
 const generateButton = document.querySelector('#generate-button');
@@ -20,15 +20,65 @@ document.addEventListener('DOMContentLoaded', () => {
     inputPrompt.placeholder = inputPlaceholders[promptRandomNumber];
 })
 
-commitForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+const askIA = async (apiKey, type, prompt) => {
+    geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const question = `Generate possible commits messages following the Conventional Commits, based on: ${type}: ${prompt}. Do not include a body or any additional text. (You must respond in the same language as the prompt.)`;
+    const contents = [{
+        parts: [{
+            text: question
+        }]
+    }];
 
-})
+    const response = await fetch(geminiURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            contents
+        })
+    })
+
+    const data = await response.json();
+    return data.candidates[0].content.parts[0].text;
+}
+
+const mdToHTML = (text) => {
+    const converter = new showdown.Converter();
+    return converter.makeHtml(text);
+}
+
+const formValidation = async (event) => {
+    event.preventDefault();
+    let apiKeyValue = apiKey.value;
+    let inputTypeValue = inputType.value;
+    let inputPromptValue = inputPrompt.value;
+
+    generateButton.disabled = true;
+    generateButton.textContent = "Creating commit message...";
+    generateButton.classList.add('pulse');
+
+    try {
+        const response = await askIA(apiKeyValue, inputTypeValue, inputPromptValue);
+        aiResponse.innerHTML = mdToHTML(response);
+
+    } catch(error) {
+        aiResponse.classList.remove('hidden'); 
+        aiResponsePara.innerHTML = error;
+
+    } finally {
+        copyButton.classList.remove('hidden'); 
+        aiResponse.classList.remove('hidden'); 
+        generateButton.disabled = false;
+        generateButton.textContent = "Generate new Commit";
+        generateButton.classList.remove('pulse');
+    }
+}
+commitForm.addEventListener('submit', formValidation)
 
 copyButton.addEventListener('click', () => {
-    const textToCopy = aiResponse.querySelector('p').textContent;
+    let textToCopy = aiResponse.textContent;
     navigator.clipboard.writeText(textToCopy);
     textToCopy.select();
     textToCopy.setSelectionRange(0, 99999);
-
 })

@@ -5,7 +5,7 @@
     font-family: "DM Sans", sans-serif;
 }
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #background {
@@ -37,6 +37,8 @@ header img {
 }
 
 section {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     padding: 2rem 1.5rem;
     background: #120e1aa8;
@@ -50,7 +52,7 @@ h1 {
     margin-bottom: 8px;
 }
 section > p {
-    color: rgb(179, 179, 179);
+    color: #A6A6A6;
     line-height: 1.5;
 }
 
@@ -72,7 +74,8 @@ section > p {
 #api-key, #input-type, #input-prompt {
     padding: 14px;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
     background: #0f0e17;
     color: #fff;
     border: 0;
@@ -98,51 +101,76 @@ section > p {
     font-size: 0.85rem;
     letter-spacing: 0.15rem;
     font-weight: 600;
+    text-transform: uppercase;
     transition: all 0.5s ease-in-out;
 }
 
 #commit-form button:hover {
-    transition: all 0.5s ease-in-out;
     background-position: center center;
 }
 #commit-form button:active {
     background-position: right center;
 }
+#commit-form button:disabled {
+    filter: grayscale(100);
+    cursor: not-allowed;
+}
+
 #ai-response {
-    position: relative;
     padding: 18px 14px;
     margin-top: 24px;
     background: #0f0e17;
     border-radius: 4px;
-    border-left:#6300DB99 3px solid;
-}
-#ai-response > p {
-    color: #fff;
     line-height: 1.5;
+    color: #fff;
+    border-left:#6300DB99 3px solid;
 }
 
 #copy-button {
+    align-self: flex-end;
     cursor: pointer;
-    position: absolute;
-    top: 10px; right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 5px 5px 3px;
-    background-color: #6300DB;
-    font-size: 0.7rem;
+    margin-top: 10px;
+    font-size: 0.9rem;
     color: #fff;
-    border-radius: 4px;
-    transition: all 0.5s ease-in-out;
-}
-#copy-button:hover {
-    background-color: #F05033;
+    text-decoration: underline;
     transition: all 0.5s ease-in-out;
 }
 
-#copy-button img {
-    width: 20px;
-    aspect-ratio: 1/1;
+.credits {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #A6A6A6;
+    transition: all 0.5s ease-in-out;
+}
+.credits a:link {
+    text-decoration: none;
+    color: #A6A6A6;
+    transition: all 0.5s ease-in-out;
+}
+.credits a:link:hover {
+    color: #F05033;
+}
+
+.slide-in {
+    animation: slidein 1s;
+}
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease;
+}
+@keyframes pulse {
+    50% { opacity: 0.5; }
 }
 
 @media (min-width: 600px) {
