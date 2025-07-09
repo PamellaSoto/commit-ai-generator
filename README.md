@@ -11,6 +11,7 @@ A simple, smart tool to improve your workflow and save time.
 - HTML  
 - CSS  
 - JavaScript  
+- [ThPace background]
 - Google Gemini API  
 
 ---
