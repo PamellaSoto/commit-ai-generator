@@ -1,4 +1,4 @@
-![Project cover photo]()
+![Project cover photo](./screenshot.png)
 
 ## 🤖 Commit AI Generator
 Is an intelligent commit message generator powered by Gemini AI, designed to help developers write clear, standardized messages effortlessly.
